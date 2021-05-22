@@ -6,11 +6,8 @@ const {getImageData, imageFromBuffer} = require('@canvas/image');
 const levenshtein = require('js-levenshtein');
 
 class imgLookAlike {
-    constructor(img1, img2){
-        this.img1 = img1;
-        this.img2 = img2;
-    }
-
+    constructor()
+    
     async compare(pathImg1, pathImg2, options){
         
         options = (typeof options !== "undefined") ? options : {};
@@ -47,7 +44,7 @@ class imgLookAlike {
         if(options.algorithm === "hamming")
             distance = this.hammingDistance(imageHashes)
         if(options.algorithm === "levenshtein")
-            distance = levenshtein(this.hexToBin(imageHashes[0]), this.hexToBin(imageHashes[1]));
+            distance = levenshtein(imageHashes[0], imageHashes[1]);
 
         return distance;
     }

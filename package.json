@@ -3,16 +3,15 @@
   "version": "1.0.0",
   "description": "small module to calculate if 2 images look alike using perceptual hash Hamming distance and Levenshtein distance",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BoujuFrancoisPro/imgLookAlike.git"
   },
   "keywords": [
     "perceptual",
-    "hash"
+    "hash",
+    "levenshtein",
+    "hamming"
   ],
   "author": "Bouju Francois",
   "license": "MIT",
