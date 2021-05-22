@@ -1,0 +1,31 @@
+{
+  "name": "imglookalike",
+  "version": "1.0.0",
+  "description": "small module to calculate if 2 images look alike using perceptual hash Hamming distance and Levenshtein distance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BoujuFrancoisPro/imgLookAlike.git"
+  },
+  "keywords": [
+    "perceptual",
+    "hash"
+  ],
+  "author": "Bouju Francois",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BoujuFrancoisPro/imgLookAlike/issues"
+  },
+  "homepage": "https://github.com/BoujuFrancoisPro/imgLookAlike#readme",
+  "dependencies": {
+    "@canvas/image": "^1.0.1",
+    "blockhash-core": "^0.1.0",
+    "js-levenshtein": "^1.1.6"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0"
+  }
+}
