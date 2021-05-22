@@ -2,14 +2,14 @@
 
 ## Installation 
 
-```npm install imagelookalike```
+```npm install imglookalike```
  
 ## Usage
 
 **Note**: as of now it has been with .png and .jpg file formats
 
 ```js
-const imglookalike = require('imagelookalike')
+const imglookalike = require('imglookalike')
 
 const images = new imgLookAlike();
 

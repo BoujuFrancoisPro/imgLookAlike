@@ -6,7 +6,9 @@ const {getImageData, imageFromBuffer} = require('@canvas/image');
 const levenshtein = require('js-levenshtein');
 
 class imgLookAlike {
-    constructor()
+    constructor(){
+        
+    }
     
     async compare(pathImg1, pathImg2, options){
         
