@@ -5,12 +5,9 @@ const fsPromises = require("fs/promises");
 const {getImageData, imageFromBuffer} = require('@canvas/image');
 const levenshtein = require('js-levenshtein');
 
-class imgLookAlike {
-    constructor(){
-        
-    }
+
     
-    async compare(pathImg1, pathImg2, options){
+    async function compare(pathImg1, pathImg2, options){
         
         options = (typeof options !== "undefined") ? options : {};
         if(typeof options === "object")
@@ -39,26 +36,26 @@ class imgLookAlike {
         for(let i = 0; i < filesContent.length; i++){
             image = await imageFromBuffer(filesContent[i]);
             imageData = getImageData(image);
-            hashRaw = this.hash(imageData, options.nBits);
+            hashRaw = hash(imageData, options.nBits);
             imageHashes.push(hashRaw);
         }
 
         if(options.algorithm === "hamming")
-            distance = this.hammingDistance(imageHashes)
+            distance = hammingDistance(imageHashes)
         if(options.algorithm === "levenshtein")
             distance = levenshtein(imageHashes[0], imageHashes[1]);
 
         return distance;
     }
 
-    hammingDistance(imgHashes){
+    function hammingDistance(imgHashes){
         
         let binHashes = [];
         let distance = 0;
         let binHash;
 
         for(let i = 0; i < imgHashes.length; i++){
-            binHash = this.hexToBin(imgHashes[i])
+            binHash = hexToBin(imgHashes[i])
             binHashes.push(binHash);
         }
 
@@ -70,12 +67,12 @@ class imgLookAlike {
         return distance;
     }
     
-    hash(imageData, nBits){
+    function hash(imageData, nBits){
         
         return  blockhash.bmvbhash(imageData, nBits);  
     }
 
-    hexToBin(hexHash){
+    function hexToBin(hexHash){
 
         let convertedString = "";
         //store all the corresponding values of binary to hex
@@ -106,6 +103,5 @@ class imgLookAlike {
 
         return convertedString
     }
-}
 
-module.exports = imgLookAlike;
+module.exports = { compare };
