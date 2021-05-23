@@ -11,9 +11,7 @@
 ```js
 const imglookalike = require('imglookalike')
 
-const images = new imgLookAlike();
-
-images.compare('path/to/img1.png', path/to/img2.jpg)
+imglookalike.compare('path/to/img1.png', 'path/to/img2.jpg')
     .then((result) =>{
         /*210 
         Do something based on that result
@@ -21,9 +19,9 @@ images.compare('path/to/img1.png', path/to/img2.jpg)
     })
 
 // increase precision by changing the number of bits of the hash
-images.compare('path/to/img1.png', path/to/img2.jpg, {nBits : 16})
+imglookalike.compare('path/to/img1.png', path/to/img2.jpg, {nBits : 16})
 // select which comparison algorith to run (hamming or levenshtein)
-images.compare('path/to/img1.png', path/to/img2.jpg, {algorithm : "hamming"})
+imglookalike.compare('path/to/img1.png', path/to/img2.jpg, {algorithm : "hamming"})
 ```
 ## API
 
