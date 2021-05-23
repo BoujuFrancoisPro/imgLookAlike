@@ -1,6 +1,6 @@
 {
   "name": "imglookalike",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "small module to calculate if 2 images look alike using perceptual hash Hamming distance and Levenshtein distance",
   "main": "index.js",
   "repository": {
